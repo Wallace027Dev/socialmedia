@@ -1,4 +1,4 @@
-import Feed from '../components/Feed';
+import Feed from "../components/Feed";
 import { useState, useEffect } from "react";
 
 export default function MostViewed() {
@@ -7,11 +7,13 @@ export default function MostViewed() {
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3001/posts/most-viewed")
-      .then(async (response) => {
-        if (!response.ok){
-          setHasError(true)
-          return
+    async function loadPosts() {
+      try {
+        const response = await fetch("http://localhost:3001/posts/most-viewed");
+
+        if (!response.ok) {
+          setHasError(true);
+          return;
         }
 
         const body = await response.json();
@@ -22,19 +24,18 @@ export default function MostViewed() {
             publishedAt: new Date(post.publishedAt),
           }))
         );
-      })
-      .catch(() => {
+      } catch {
         setHasError(true);
-      })
-      .finally(() => {
+      } finally {
         setIsLoading(false);
-      });
+      }
+    }
+    loadPosts();
   }, []);
-
   return (
     <main className="most-viewed">
       <Feed
-      hasError={hasError}
+        hasError={hasError}
         isLoading={isLoading}
         posts={posts}
         title="Mais vistos"
