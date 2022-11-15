@@ -9,6 +9,11 @@ export default function MostViewed() {
   useEffect(() => {
     fetch("http://localhost:3001/posts/most-viewed")
       .then(async (response) => {
+        if (!response.ok){
+          setHasError(true)
+          return
+        }
+
         const body = await response.json();
 
         setPosts(
