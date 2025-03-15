@@ -1,6 +1,6 @@
-import Feed from "../components/Feed";
 import { useState, useEffect } from "react";
-import {getMostViewedPostsList} from '../services/postsServices'
+import { getMostViewedPostsList } from "../services/postsServices";
+import Feed from "../components/Feed";
 
 export default function MostViewed() {
   const [posts, setPosts] = useState([]);

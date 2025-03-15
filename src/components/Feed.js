@@ -1,23 +1,23 @@
+import "../styles/Feed.css";
 import clockIcon from "../images/clock.svg";
 import emptyFolderIcon from "../images/empty-folder.svg";
 import loader from "../images/loader-primary.svg";
-import "../styles/Feed.css";
 import FeedStatus from "./FeedStatus";
-import cloudErrorIcon from '../images/cloud-error.svg'
+import cloudErrorIcon from "../images/cloud-error.svg";
 
 export default function Feed(props) {
   if (props.isLoading) {
     return <img src={loader} alt="Loading" className="spin" />;
   }
 
-  if(props.hasError){
+  if (props.hasError) {
     return (
       <FeedStatus
         image={cloudErrorIcon}
         title="Algo deu errado"
-        subtitle="Sinto muito. Não lançamos essa função ainda."
+        subtitle="Sinto muito. Página em desenvolvimento."
       />
-    )
+    );
   }
 
   if (props.posts.length === 0) {
