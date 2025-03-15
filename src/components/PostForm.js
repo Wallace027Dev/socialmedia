@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/PostForm.css";
+import "../styles/PostForm.module.css";
 import userIcon from "../images/user.svg";
 import paperPlaneIcon from "../images/paper-plane.svg";
 import loader from "../images/loader-white.svg";

@@ -1,14 +1,16 @@
+import styles from "../styles/Feed.module.css"
+import spin from "../styles/Spin.module.css"
+
 import userIcon from "../images/user.svg";
 import clockIcon from "../images/clock.svg";
 import emptyFolderIcon from "../images/empty-folder.svg";
 import loader from "../images/loader-primary.svg";
-import "../styles/Feed.css";
 import FeedStatus from "./FeedStatus";
 import cloudErrorIcon from '../images/cloud-error.svg'
 
 export default function Feed(props) {
   if (props.isLoading) {
-    return <img src={loader} alt="Loading" className="spin" />;
+    return <img src={loader} alt="Loading" className={spin.spin} />;
   }
 
   if(props.hasError){
@@ -39,18 +41,18 @@ export default function Feed(props) {
         <h2>{props.subtitle}</h2>
       </header>
 
-      <section className="feed">
+      <section className={styles.feed}>
         {props.posts.map((post) => (
           <article key={post.id}>
             <p>{post.content}</p>
 
             <footer>
-              <div className="user-details">
+              <div className={styles.user__details}>
                 <img src={userIcon} alt="User" />
                 <strong>{post.userName}</strong>
               </div>
 
-              <div className="time">
+              <div className={styles.time}>
                 <img src={clockIcon} alt="Clock" />
                 <span>
                   Publicado em {post.publishedAt.toLocaleDateString("pt-br")}

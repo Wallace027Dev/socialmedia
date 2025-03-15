@@ -1,6 +1,7 @@
 import Feed from "../components/Feed";
 import { useState, useEffect } from "react";
-import {getMostViewedPostsList} from '../services/postsServices'
+import { getMostViewedPostsList } from "../services/postsServices";
+import Header from "../components/Header";
 
 export default function MostViewed() {
   const [posts, setPosts] = useState([]);
@@ -27,14 +28,18 @@ export default function MostViewed() {
     loadPosts();
   }, []);
   return (
-    <main className="most-viewed">
-      <Feed
-        hasError={hasError}
-        isLoading={isLoading}
-        posts={posts}
-        title="Mais vistos"
-        subtitle="Acompanhe os assuntos mais comentados no momento e fique por dentro de qualquer novidade"
-      />
-    </main>
+    <>
+      <Header />
+
+      <main className="most-viewed">
+        <Feed
+          hasError={hasError}
+          isLoading={isLoading}
+          posts={posts}
+          title="Mais vistos"
+          subtitle="Acompanhe os assuntos mais comentados no momento e fique por dentro de qualquer novidade"
+        />
+      </main>
+    </>
   );
 }
