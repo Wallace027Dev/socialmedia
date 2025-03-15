@@ -1,9 +1,11 @@
 import { useState } from "react";
-import "../styles/PostForm.module.css";
+import Image from "next/image";
+
 import userIcon from "../images/user.svg";
 import paperPlaneIcon from "../images/paper-plane.svg";
 import loader from "../images/loader-white.svg";
 import { createPost } from "../services/postsServices";
+import { PostFormContainer } from "../styles/PostForm";
 
 export default function PostForm(props) {
   const [history, setHistory] = useState("");
@@ -20,7 +22,7 @@ export default function PostForm(props) {
 
       const response = await createPost({
         history,
-        userName,
+        userName
       });
 
       if (response === true) {
@@ -46,7 +48,7 @@ export default function PostForm(props) {
   }
 
   return (
-    <form className="post-form" onSubmit={handleSubmit}>
+    <PostFormContainer onSubmit={handleSubmit}>
       {errorMessage && (
         <div className="error-container">
           <strong>Ocorreu um erro</strong>
@@ -59,7 +61,7 @@ export default function PostForm(props) {
       />
 
       <div>
-        <img src={userIcon} alt="User" />
+        <Image src={userIcon} alt="User" />
 
         <input
           value={userName}
@@ -67,12 +69,15 @@ export default function PostForm(props) {
           onChange={(event) => setUserName(event.target.value)}
         />
 
-        <button type="submit" disable={isLoading}>
-          {!isLoading && <img src={paperPlaneIcon} alt="Paper plane" />}
-          {isLoading && <img src={loader} alt="Loading" className="spin" />}
+        <button type="submit" disabled={isLoading}>
+          {!isLoading ? (
+            <Image src={paperPlaneIcon} alt="Paper plane" />
+          ) : (
+            <Image src={loader} alt="Loading" className="spin" />
+          )}
           Publicar
         </button>
       </div>
-    </form>
+    </PostFormContainer>
   );
 }

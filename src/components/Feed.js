@@ -1,26 +1,27 @@
-import styles from "../styles/Feed.module.css"
-import spin from "../styles/Spin.module.css"
+import { FeedContainer } from "../styles/Feed";
 
+import FeedStatus from "./FeedStatus";
 import userIcon from "../images/user.svg";
 import clockIcon from "../images/clock.svg";
 import emptyFolderIcon from "../images/empty-folder.svg";
 import loader from "../images/loader-primary.svg";
-import FeedStatus from "./FeedStatus";
-import cloudErrorIcon from '../images/cloud-error.svg'
+import cloudErrorIcon from "../images/cloud-error.svg";
+import { HeaderContainer } from "../styles/Header";
+import Image from "next/image";
 
 export default function Feed(props) {
   if (props.isLoading) {
-    return <img src={loader} alt="Loading" className={spin.spin} />;
+    return <Image src={loader} alt="Loading" className="spin" />
   }
 
-  if(props.hasError){
+  if (props.hasError) {
     return (
       <FeedStatus
         image={cloudErrorIcon}
         title="Algo deu errado"
         subtitle="Não foi possível carregar o feed. Tente novamente mais tarde."
       />
-    )
+    );
   }
 
   if (props.posts.length === 0) {
@@ -36,24 +37,24 @@ export default function Feed(props) {
 
   return (
     <>
-      <header>
+      <HeaderContainer>
         <h1>{props.title}</h1>
         <h2>{props.subtitle}</h2>
-      </header>
+      </HeaderContainer>
 
-      <section className={styles.feed}>
+      <FeedContainer>
         {props.posts.map((post) => (
           <article key={post.id}>
             <p>{post.content}</p>
 
             <footer>
-              <div className={styles.user__details}>
-                <img src={userIcon} alt="User" />
+              <div className="user-details">
+                <Image src={userIcon} alt="User" />
                 <strong>{post.userName}</strong>
               </div>
 
-              <div className={styles.time}>
-                <img src={clockIcon} alt="Clock" />
+              <div className="time">
+                <Image src={clockIcon} alt="Clock" />
                 <span>
                   Publicado em {post.publishedAt.toLocaleDateString("pt-br")}
                 </span>
@@ -61,7 +62,7 @@ export default function Feed(props) {
             </footer>
           </article>
         ))}
-      </section>
+      </FeedContainer>
     </>
   );
 }

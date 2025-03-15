@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <nav>
       <Link href="/">Meu feed</Link>
-      <Link href="/most-viewed">Mais vistos</Link>
+      <Link href="/mostViewed">Mais vistos</Link>
     </nav>
   );
 }

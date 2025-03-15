@@ -1,4 +1,6 @@
+"use client";
 import { useState, useEffect } from "react";
+import { MainContainer } from "../styles/Main";
 
 import Feed from "../components/Feed";
 import PostForm from "../components/PostForm";
@@ -45,7 +47,7 @@ export default function Home() {
     <>
       <PostForm onSubmit={handleSubmit} />
 
-      <main>
+      <MainContainer>
         <Feed
           isLoading={isLoading}
           hasError={hasError}
@@ -53,7 +55,7 @@ export default function Home() {
           title="Seu Feed"
           subtitle="Acompanhe o que seus amigos estão pensando em tempo real"
         />
-      </main>
+      </MainContainer>
     </>
   );
 }
