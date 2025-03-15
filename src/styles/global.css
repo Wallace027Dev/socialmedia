@@ -57,7 +57,12 @@
 body {
   background-color: var(--white);
   color: var(--gray-700);
+  
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
 }
+
 
 @keyframes spin {
   from {transform:rotate(0deg);}

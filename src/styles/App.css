@@ -7,7 +7,7 @@ div.wrapper {
 }
 
 div.wrapper::before {
-  content: ' ';
+  content: " ";
   background-color: var(--gray-100);
   width: 100%;
   height: 160px;
@@ -68,4 +68,79 @@ main.most-viewed {
 
 main.most-viewed h2 {
   font-size: 16px;
+}
+
+/* Responsividade */
+
+@media (max-width: 1024px) {
+  div.wrapper {
+    padding: 40px 0;
+  }
+
+  main {
+    width: 80%;
+    margin-top: 60px;
+  }
+
+  main header h1 {
+    font-size: 36px;
+  }
+
+  main header h2 {
+    font-size: 16px;
+  }
+
+  div.wrapper nav a {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  div.wrapper {
+    padding: 20px 0;
+  }
+
+  main {
+    width: 90%;
+    margin-top: 40px;
+    padding-top: 24px;
+  }
+
+  main header h1 {
+    font-size: 30px;
+  }
+
+  main header h2 {
+    font-size: 14px;
+  }
+
+  div.wrapper nav a {
+    font-size: 18px;
+    margin: 0 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  div.wrapper {
+    padding: 10px 0;
+  }
+
+  main {
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 16px;
+  }
+
+  main header h1 {
+    font-size: 24px;
+  }
+
+  main header h2 {
+    font-size: 12px;
+  }
+
+  div.wrapper nav a {
+    font-size: 16px;
+    margin: 0 8px;
+  }
 }
