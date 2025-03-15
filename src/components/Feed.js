@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export default function Feed(props) {
   if (props.isLoading) {
-    return <Image src={loader} alt="Loading" className="spin" />
+    return <Image src={loader} alt="Loading" className="spin" />;
   }
 
   if (props.hasError) {
@@ -49,7 +49,7 @@ export default function Feed(props) {
 
             <footer>
               <div className="user-details">
-                <Image src={userIcon} alt="User" />
+                <img src={post.imagePath} alt="User" width="40" height="40" />
                 <strong>{post.userName}</strong>
               </div>
 

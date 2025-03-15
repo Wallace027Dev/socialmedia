@@ -38,6 +38,7 @@ export default function Home() {
         id: Math.random(),
         content: history,
         userName,
+        imagePath: "../images/user.svg", 
         publishedAt: new Date(),
       },
     ]);

@@ -32,6 +32,12 @@ export const FeedContainer = styled.section`
     align-items: center;
   }
 
+  article footer .user-details img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+
   article footer .user-details strong {
     font-size: 14px;
     margin-left: 16px;

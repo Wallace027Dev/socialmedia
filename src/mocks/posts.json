@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "userName": "Wallace",
+    "content": "Olá mundo",
+    "imagePath": "/images/minha-foto.jpg",
+    "publishedAt": "Nov 15, 2022"
+  }
+]
