@@ -15,7 +15,7 @@ export default function Feed(props) {
       <FeedStatus
         image={cloudErrorIcon}
         title="Algo deu errado"
-        subtitle="Não foi possível carregar o feed. Tente novamente mais tarde."
+        subtitle="Sinto muito. Não lançamos essa função ainda."
       />
     )
   }
