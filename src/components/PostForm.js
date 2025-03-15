@@ -18,38 +18,37 @@ export default function PostForm(props) {
       setIsLoading(true);
       setErrorMessage(null);
 
-      const response = await createPost({
-        history,
-        userName,
-      });
+      if (history.trim() !== "" && userName.trim() !== "") {
+        const response = await createPost({
+          history,
+          userName
+        });
 
-      if (response === true) {
-        props.onSubmit({ history, userName });
+        if (response) {
+          props.onSubmit({ history, userName });
 
-        setHistory("");
-        setUserName("");
-
-        return;
+          setHistory("");
+          setUserName("");
+        } else {
+          setErrorMessage("Erro ao cadastrar o post. Resposta incompleta.");
+        }
+      } else {
+        setErrorMessage(
+          "Por favor, preencha todos os campos antes de publicar."
+        );
       }
-
-      setErrorMessage(response);
     } catch {
       setErrorMessage("Ocorreu um erro ao cadastrar o post!");
     } finally {
       setIsLoading(false);
     }
-
-    props.onSubmit({ history, userName });
-
-    setHistory("");
-    setUserName("");
   }
 
   return (
     <form className="post-form" onSubmit={handleSubmit}>
       {errorMessage && (
         <div className="error-container">
-          <strong>Ocorreu um erro</strong>
+          <strong>{errorMessage}</strong>
         </div>
       )}
       <input
@@ -67,7 +66,7 @@ export default function PostForm(props) {
           onChange={(event) => setUserName(event.target.value)}
         />
 
-        <button type="submit" disable={isLoading}>
+        <button type="submit" disabled={isLoading}>
           {!isLoading && <img src={paperPlaneIcon} alt="Paper plane" />}
           {isLoading && <img src={loader} alt="Loading" className="spin" />}
           Publicar

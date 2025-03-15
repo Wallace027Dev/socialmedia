@@ -1,4 +1,3 @@
-import userIcon from "../images/user.svg";
 import clockIcon from "../images/clock.svg";
 import emptyFolderIcon from "../images/empty-folder.svg";
 import loader from "../images/loader-primary.svg";
@@ -46,7 +45,7 @@ export default function Feed(props) {
 
             <footer>
               <div className="user-details">
-                <img src={userIcon} alt="User" />
+                <img src={post.imagePath} alt="User" />
                 <strong>{post.userName}</strong>
               </div>
 

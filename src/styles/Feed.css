@@ -31,6 +31,12 @@
   align-items: center;
 }
 
+.feed article footer .user-details img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
 .feed article footer .user-details strong {
   font-size: 14px;
   margin-left: 16px;
