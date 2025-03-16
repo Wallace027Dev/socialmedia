@@ -1,6 +1,7 @@
 .feed {
   margin-top: 40px;
-  width: 592px;
+  max-width: 592px;
+  width: 100%;
 }
 
 .feed article {
@@ -80,10 +81,6 @@
 /* Responsividade */
 
 @media (max-width: 1024px) {
-  .feed {
-    width: 80%;
-  }
-
   .feed-status h1 {
     font-size: 36px;
   }
@@ -107,21 +104,12 @@
 }
 
 @media (max-width: 768px) {
-  .feed {
-    width: 90%;
-    margin-top: 30px;
-  }
-
   .feed-status h1 {
     font-size: 30px;
   }
 
   .feed-status h2 {
     font-size: 14px;
-  }
-
-  .feed article {
-    padding: 12px;
   }
 
   .feed article footer .user-details strong {
@@ -148,8 +136,9 @@
     font-size: 12px;
   }
 
-  .feed article {
-    padding: 8px;
+  .feed article footer .user-details img {
+    height: 30px;
+    width: 30px;
   }
 
   .feed article footer .user-details strong {
