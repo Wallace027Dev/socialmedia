@@ -69,7 +69,7 @@ export default function PostForm(props) {
         <button type="submit" disabled={isLoading}>
           {!isLoading && <img src={paperPlaneIcon} alt="Paper plane" />}
           {isLoading && <img src={loader} alt="Loading" className="spin" />}
-          Publicar
+          <span>Publicar</span>
         </button>
       </div>
     </form>

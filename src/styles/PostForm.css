@@ -97,12 +97,21 @@
   }
 
   .post-form > div {
+    justify-content: center;
     flex-wrap: wrap;
   }
 
   .post-form > div button {
     margin-top: 16px;
     padding: 12px 24px;
+
+    span {
+      display: none;
+    }
+
+    img {
+      margin-right: 0;
+    }
   }
 
   .post-form .error-container {
