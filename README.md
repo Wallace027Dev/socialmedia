@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Rede Social Simples
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é um projeto de uma rede social simples, desenvolvido com React. Ele permite que os usuários publiquem histórias, visualizem um feed de postagens e acompanhem os posts mais visualizados.
 
-## Available Scripts
+![preview](./public/images/preview.png)
 
-In the project directory, you can run:
+## Funcionalidades
 
-### `npm start`
+- **Publicar histórias**: Os usuários podem escrever e publicar novas histórias.
+- **Feed de postagens**: Exibe as histórias publicadas pelos usuários.
+- **Mais visualizados**: Página dedicada para exibir os posts mais visualizados.
+- **Responsividade**: O layout é adaptado para diferentes tamanhos de tela.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tecnologias Utilizadas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **React Router**: Gerenciamento de rotas no frontend.
+- **CSS**: Estilização do projeto com arquivos CSS modulares.
+- **LocalStorage**: Armazenamento local para persistência de dados.
 
-### `npm test`
+## Estrutura do Projeto
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+src/
+├── components/
+│ ├── Feed.js
+│ ├── FeedStatus.js
+│ ├── PostForm.js
+├── config/
+│ └── errors.js
+├── images/
+│ ├── clock.svg
+│ ├── cloud-error.svg
+│ ├── empty-folder.svg
+│ ├── loader-primary.svg
+│ ├── loader-white.svg
+│ ├── paper-plane.svg
+│ ├── reload.svg
+│ └── user.svg
+├── mocks/
+│ └── posts.json
+├── pages/
+│ ├── Home.js
+│ └── MostViewed.js
+├── services/
+│ └── postsServices.js
+├── styles/
+│ ├── App.css
+│ ├── Feed.css
+│ ├── PostForm.css
+│ └── global.css
+├── App.js
+├── Routes.js
+├── index.js
 
-### `npm run build`
+## Como Executar o Projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone o repositório**:
+```bash
+  git clone <url-do-repositorio>
+  cd socialmedia
+```
+2. Instale as dependências:
+```bash
+  npm install
+```
+3. Inicie o servidor de desenvolvimento:
+```bash
+  npm start
+```
+4. Acesse no navegador: Abra http://localhost:3000 para visualizar o projeto.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Scripts Disponíveis
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- npm start: Inicia o servidor de desenvolvimento.
+- npm run build: Gera uma versão otimizada para produção.
+- npm test: Executa os testes configurados.
+- npm run eject: Ejetar a configuração padrão do Create React App.
 
-### `npm run eject`
+## Estrutura de Estilos
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Os estilos estão organizados em arquivos CSS modulares dentro da pasta src/styles. O arquivo global.css contém estilos globais e variáveis CSS.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Licença
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Este projeto é apenas para fins educacionais e não possui uma licença específica.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Wallace Vieira](https://wallacevieira.vercel.app)  
+Desenvolvedor Fullstack e gamer.
